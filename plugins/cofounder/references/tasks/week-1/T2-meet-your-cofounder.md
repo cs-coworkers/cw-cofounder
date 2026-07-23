@@ -108,10 +108,16 @@ Two lines: what the agent now knows, and what is next. Nothing else.
 
 - `00-instructions/agent-instructions.md` exists and contains the session-start
   **continue** line.
-- `00-admin/progress.md` exists and parses against `state-contract.md`.
+- `00-admin/founder-profile.md` exists (Step 5 records the scheduled-prompt answer into it).
 - Chrome connection test returned live (or the task is `needs-attention` with
   `W1-T2-NO-CHROME` recorded and the founder told).
 - **`CW-COFOUNDER-LOADED` seen in your own instructions at session start** — see below.
+
+`00-admin/progress.md` is **not** a verify condition here — it is the agent's own bookkeeping
+file, written and rewritten by reconcile on every run, not a founder artifact. Gating "Meet
+your co-founder" on it would flip the task unverified whenever the agent's own file is absent
+(e.g. the very first run, before reconcile writes it), which is nonsense. Verify T2 on what
+the *founder* produced: their instructions file, their profile answer, their marker paste.
 
 ### The marker check
 

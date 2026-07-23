@@ -54,7 +54,7 @@ Next: finishing task 4 — I've got 6 of your files, and I'm distilling them now
 
 Say **continue** to carry on.
 Add files to 02-inputs/ any time, then say **update**.
-Stuck? Send Charlie whatever I last told you, including any code like W1-T4-CHROME-DEAD.
+Stuck? Send whoever set you up whatever I last told you, including any code like W1-T4-CHROME-DEAD.
 ```
 
 Rules for rendering:

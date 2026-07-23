@@ -30,14 +30,28 @@ Run this at the top of every `cofounder-continue`, and in read-only form for `co
 
 3. **Resolve the week.** List `${CLAUDE_PLUGIN_ROOT}/references/tasks/week-*/` — those
    directories, and only those, are the weeks this installed copy carries. Never assume
-   Week 1; never read a week number out of `progress.md` and trust it.
-   - `current-week` = the lowest-numbered installed week not fully `verified`/`skipped`.
-   - `progress.md` has a `## Week N` section for a week that is **not** installed → do not
-     delete it and do not re-derive it. Mark that week `not-installed`, stall
-     `CF-WEEK-NOT-INSTALLED`, and point at `upgrade.md`. Their history stays.
-   - Every installed week complete → there is no current task. Skip to step 7, congratulate
-     plainly, and read `${CLAUDE_PLUGIN_ROOT}/references/upgrade.md` for what to say next.
-     Do not invent a next task and do not imply the program is over.
+   Week 1; never read a week number out of `progress.md` and trust it. Then take the **first**
+   of these that applies, in order — they are a precedence ladder, not independent bullets:
+
+   - **(a) State names a week this copy does not carry.** `progress.md` has a `## Week N`
+     section for a week not in the installed list. This wins over everything below, because a
+     founder on an older release who has *already run* a later week must be told to update, not
+     congratulated. Do not delete or re-derive that section (see step 6 for how it is written).
+     Stall `CF-WEEK-NOT-INSTALLED`, point at `upgrade.md`, and frame it as "you're on an older
+     version that's missing Week N — here's how to get it back", never as a fresh offer. Set
+     `current-week` to the highest *installed* week so `status` still renders something real.
+   - **(b) An installed week has open work.** `current-week` = the lowest-numbered installed
+     week not fully `verified`/`skipped`. This is the normal path; go on to step 4.
+   - **(c) Every installed week is complete and state names no uninstalled week.** There is no
+     current task. Skip to step 7, congratulate plainly, and read
+     `${CLAUDE_PLUGIN_ROOT}/references/upgrade.md` for what to say next — offer the next week
+     as new. Do not invent a task and do not imply the program is over.
+
+   **Completion for (c) must have been earned once.** "Every installed week complete" is read
+   from state, and state can lie. Before treating the top installed week as done-and-dusted,
+   confirm its verify blocks still pass on this run (step 4 runs for the top installed week
+   even when state calls it complete). Only a week *below* the top installed week is trusted
+   from state without re-verifying (the "don't re-verify completed weeks" rule in step 4).
 
 4. **Run every mechanical verify block in the current week, against the filesystem.** Every
    run, all of that week's tasks — not just the current one. This is what catches state that
@@ -46,9 +60,19 @@ Run this at the top of every `cofounder-continue`, and in read-only form for `co
    block names. A file that exists but is empty, or is missing a required section, is
    `needs-attention`, never `verified`.
 
-   **Weeks already complete are not re-verified.** Read their sections, carry them forward
-   verbatim. A later release may ship changed task files; re-running old verify blocks
-   against them would downgrade work the founder genuinely finished.
+   **A verify condition that depends on an unanswered gating question is not a failure.** Some
+   blocks are conditional on a profile answer (T4's `site-summary.md` only if `website: yes`).
+   If `founder-profile.md` does not exist yet, or that answer is unrecorded, the condition is
+   *unknown*, not failed — leave the task `started`/`needs-attention` and let its flow ask the
+   question. Never mark a task `not-started` because a branch you cannot yet evaluate is absent.
+
+   **Which weeks get re-verified.** Always re-verify the **top installed week** — the highest
+   week number this copy carries — even when state calls it complete; that is the one whose
+   "done" decision gates whether you congratulate and offer the next week, and it must be
+   evidence-backed every run, not trusted from a file the founder could have emptied. Weeks
+   **below** the top installed week are read from their sections and carried forward verbatim,
+   never re-verified: a later release may ship changed task files, and re-running old verify
+   blocks against them would downgrade work the founder genuinely finished.
 
 5. **Compare against what progress.md claimed.** Three cases:
    - *Agreement* — carry the stored `started` / `verified` dates forward unchanged. They
@@ -60,8 +84,13 @@ Run this at the top of every `cofounder-continue`, and in read-only form for `co
      done"). This is the path a half-finished folder from the previous version takes.
 
 6. **Rewrite progress.md** in the grammar of `state-contract.md`. This is the one file
-   the protocol owns and may overwrite without asking. Rewrite the current week's section;
-   carry every other section forward unchanged.
+   the protocol owns and may overwrite without asking. Rewrite the section for the week you
+   re-verified this run (the top installed week — see step 4). Carry every **installed** week
+   below it forward unchanged. For a week named in state but **not installed** (case 3a),
+   replace its task rows with a single `not-installed` line and leave its heading — never
+   delete the section, never keep stale task rows that imply the week is runnable here. This
+   is the one exception to "carry other sections unchanged", and it is the same rule the state
+   contract states; the two must not drift.
 
 7. **Derive position** — within `current-week`, the first task that is neither `verified`
    nor `skipped`.
@@ -120,7 +149,7 @@ I'm stuck, and this isn't something you did wrong.
   What happened: <plain sentence>
   Code: W1-T4-CHROME-DEAD
 
-Say **status** to see where you are. If this keeps happening, send Charlie that code.
+Say **status** to see where you are. If this keeps happening, send that code back to whoever set you up.
 ```
 
 Codes come in two namespaces, uppercase, no spaces:
