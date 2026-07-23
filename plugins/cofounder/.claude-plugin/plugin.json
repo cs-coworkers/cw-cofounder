@@ -1,0 +1,10 @@
+{
+  "name": "cofounder",
+  "version": "0.2.0",
+  "description": "Building With Managed Agents, as a re-runnable protocol. Three founder verbs — continue, update, status — drive each week's verified tasks: stand up a founder's first agent, distil what they know, and end pointed at real people. Ships one week per release; Week 1 is the first. Protocol only: all state lives in the founder's own venture folder.",
+  "owner": "cody",
+  "status": "experimental",
+  "author": {
+    "name": "Coworkers.Global"
+  }
+}

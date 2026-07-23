@@ -1,0 +1,13 @@
+{
+  "name": "cw-cofounder",
+  "owner": {
+    "name": "Coworkers.Global"
+  },
+  "plugins": [
+    {
+      "name": "cofounder",
+      "source": "./plugins/cofounder",
+      "description": "Building With Managed Agents, as a re-runnable protocol. Three plain verbs (continue / update / status) drive each week's tasks with mechanical checks that gate advancement and judgment rubrics that coach; reconciliation-first, so a rerun and a fresh install are the same path. Week 1 is the first release (nine tasks). Protocol only — all state lives in your own venture folder. v0.2.0, 2026-07-23. Early access: unreleased, gates pending."
+    }
+  ]
+}
