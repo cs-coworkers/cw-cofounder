@@ -112,3 +112,17 @@ Empty output is the pass condition. A fix that lands in one repo and not the oth
 plugin nobody reviewed — and because the public copy is the one founders install, the repo we
 read during review would not be the repo they run. Sync on every change to a shipped file, not
 only on week releases.
+
+**Then check the two files the diff cannot see.** `cw-cofounder`'s root `README.md` and
+`marketplace.json` are excluded from the parity check because they legitimately differ from
+the dev repo — which means nothing will ever tell you they went stale. The public README is
+the founder's first contact with the product and it carries the verb table, the install steps,
+and the version number; all three drift silently. After any sync, grep it for the verbs and
+the version:
+
+```bash
+grep -nE 'cf-(continue|update|status)|v0\.[0-9]+\.[0-9]+' cw-cofounder/README.md
+```
+
+Missed on 2026-07-24: the verb rename landed everywhere the diff could reach, and left the
+public README teaching the old bare words to every founder who opened the repo page.

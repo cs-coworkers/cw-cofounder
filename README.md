@@ -16,9 +16,14 @@ You only ever need three:
 
 | Say | What happens |
 |---|---|
-| **continue** | Works out where you actually are from the files in your folder, tells you, and runs the task that comes next. Start every session with this. |
-| **update** | You added or changed files in your inputs folder — re-read them and fold in what's new, without overwriting what's already there. Any time, any number of times. |
-| **status** | The map: what's done, what's next, what's stuck. Changes nothing. |
+| **cf-continue** | Works out where you actually are from the files in your folder, tells you, and runs the task that comes next. Start every session with this. |
+| **cf-update** | You added or changed files in your inputs folder — re-read them and fold in what's new, without overwriting what's already there. Any time, any number of times. |
+| **cf-status** | The map: what's done, what's next, what's stuck. Changes nothing. |
+
+The `cf-` is not decoration. Plain words like "status" get claimed by the app you're running
+in, and when that happens your agent never hears you — no error, nothing to fix, it just
+doesn't answer. The prefixed words are yours and nothing else takes them. Say the plain word
+if you forget and it will usually still work; the prefixed one always will.
 
 ## Your work stays yours
 
@@ -36,14 +41,14 @@ Marketplace: https://github.com/cs-coworkers/cw-cofounder
 Plugin:      cofounder
 ```
 
-Then open a session in your venture folder and say **continue**.
+Then open a session in your venture folder and say **cf-continue**.
 
 If you are picking up a later week and the new version doesn't appear, the plugin list is
 cached — remove the marketplace entry and add it back. That can't affect your folder.
 
 ## Status
 
-**Early access, and honestly labelled: not finished.** This is `v0.2.0`, unreleased, with
+**Early access, and honestly labelled: not finished.** This is `v0.3.0`, unreleased, with
 its acceptance gates still open. If something stalls, the agent will give you a short code
 — send it to us, it tells us exactly where it broke.
 
