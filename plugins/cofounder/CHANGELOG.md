@@ -1,5 +1,25 @@
 # Changelog — `cofounder`
 
+## 0.3.0 — 2026-07-24 (unreleased)
+
+**The three founder verbs are now `cw-continue`, `cw-update`, `cw-status`.** Breaking for
+anyone mid-week: the wording in your own `agent-instructions.md`, settings paste, and daily
+scheduled task changes. Say the bare word if you forget — it still works on most surfaces.
+
+- Found on the first real run of the program: saying **status** in Cowork was matched by the
+  host app before the plugin saw it, and offered Claude Code — a separate runtime where the
+  plugin is not installed, so nothing happened at all. No error, nothing to diagnose.
+- Any plain word can be claimed by whatever an app ships next, so the taught verbs now carry a
+  prefix nothing else claims. The bare words stay as silent aliases: a founder who types
+  "continue" out of habit is still served wherever the word gets through, but the prefixed verb
+  is the one that is promised.
+- Side benefit: the "update my files" versus "update the plugin" ambiguity disappears for the
+  taught verb, because only one of the two is `cw-update`. The disambiguation question remains
+  for the bare alias.
+- The rule is written down rather than left to judgement — `voice.md` § The founder's three
+  verbs, plus a line in `upgrade.md`'s release checklist so every future week's verbs inherit
+  it. Gate 2's run book now tests the prefixed verb *and* records what the bare alias does.
+
 ## 0.2.0 — 2026-07-23 (unreleased)
 
 Repackaged as **one plugin that grows a week at a time** rather than a standalone Week-1

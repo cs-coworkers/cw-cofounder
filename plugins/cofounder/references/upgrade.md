@@ -24,14 +24,15 @@ invent a task to fill the gap.
 > when you're ready — it takes about a minute.
 
 Then the steps. If they say they'd rather not right now, leave it: nothing breaks, and
-`status` will still show them where they are.
+`cw-status` will still show them where they are.
 
 ## The word collision
 
-`update` is already a founder verb meaning *re-read my files*, and the Cowork button for
-getting a new release is also called update. The founder will not distinguish them. When they
-say it near anything about a new week, versions, or installing, ask which they mean in one
-line — `cofounder-update` carries the same rule. Never sweep their inputs when they were
+`cw-update` is unambiguous — it means *re-read my files* and nothing else. The **bare** word
+is not: "update" is a live alias for that verb *and* the name of the Cowork button that fetches
+a new release. The founder will not distinguish them. When they say the bare word near anything
+about a new week, versions, or installing, ask which they mean in one line — `cofounder-update`
+carries the same rule. Never sweep their inputs when they were
 asking for Week 2, and never send them to Customize when they just added a document.
 
 ## The steps (Cowork)
@@ -40,7 +41,7 @@ asking for Week 2, and never send them to Customize when they just added a docum
 2. Find the **cw-cofounder** marketplace entry and choose **update** — *not* install; it is
    already installed.
 3. Reopen the marketplace entry and install the newer **cofounder** version.
-4. Start a new session in the venture folder and say **continue**.
+4. Start a new session in the venture folder and say **cw-continue**.
 
 **The failure mode to warn them about, before they hit it.** Cowork caches a snapshot of
 the marketplace. If the entry is not refreshed first, the new version simply does not appear
@@ -56,7 +57,7 @@ Say this *before* they go looking, not after they report it missing:
 
 ## Confirming it landed
 
-After they say **continue** in a new session, reconcile re-lists
+After they say **cw-continue** in a new session, reconcile re-lists
 `references/tasks/week-*/`. The new week appears in `weeks-installed`, gets its own section
 in `progress.md`, and becomes `current-week`. Their completed weeks are read and carried
 forward, never re-verified.
@@ -73,6 +74,8 @@ Not founder-facing. A week release is:
    week's task files to fit a new one; a founder mid-week-N is reading them live.
 2. Stall codes for the new tasks registered in `reconcile.md` under `W<N>-T<n>-<reason>`.
    Product-level failures stay `CF-`.
+   **Any new founder verb carries the `cw-` prefix** — see `voice.md` § The founder's three
+   verbs. Bare words may be added as silent aliases; they may never be the taught verb.
 3. `plugin.json` version bumped — **major = week number** (Week 1 = `1.x`, Week 2 = `2.x`);
    pre-release stays `0.x`. Unconventional semver, chosen because a founder reading
    "version 3" should be able to tell it is Week 3. Reversible if it ever costs us

@@ -21,7 +21,7 @@ Write `00-instructions/agent-instructions.md`. Content (adapt names, keep the ru
 
 - Identity: you are <venture>'s founding agent. <founder> is the founder and your manager.
   You draft and organise; they decide.
-- At the start of every session: run the **continue** skill. It will tell you both
+- At the start of every session: run the **cw-continue** skill. It will tell you both
   where things stand.
 - At the end of every session: append a three-line dated summary to
   01-company/session-log.md (create it on first use).
@@ -47,7 +47,7 @@ Four lines, and the first one is a marker that makes the paste self-diagnosing:
 CW-COFOUNDER-LOADED
 You are <venture>'s founding agent, working with <founder>, the founder.
 Read 00-instructions/agent-instructions.md first and follow it.
-At the start of every session, run the continue skill.
+At the start of every session, run the cw-continue skill.
 ```
 
 Say plainly why the *file* holds the real instructions: settings fields are small and easy
@@ -91,13 +91,13 @@ same account. Then test it live — read any public page and report back what wa
 
 Offer, once, with consent, and never depend on it:
 
-> Want me to check in once a day? It's one short message that just runs **continue**. If
+> Want me to check in once a day? It's one short message that just runs **cw-continue**. If
 > you'd rather not, nothing breaks — every session picks up where you left off anyway.
 
 If yes, create a single daily scheduled task whose entire prompt is:
 
 ```
-Run the continue skill.
+Run the cw-continue skill.
 ```
 
 Never the protocol itself. A snapshot prompt goes stale the moment the plugin updates; a
@@ -113,7 +113,7 @@ Two lines: what the agent now knows, and what is next. Nothing else.
 ## verify-M
 
 - `00-instructions/agent-instructions.md` exists and contains the session-start
-  **continue** line.
+  **cw-continue** line.
 - `00-admin/founder-profile.md` exists (Step 5 records the scheduled-prompt answer into it).
 - Chrome connection test returned live (or `W1-T2-NO-CHROME` recorded and the founder told
   — this satisfies the condition; see Step 4).

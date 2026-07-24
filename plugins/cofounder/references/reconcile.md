@@ -39,7 +39,7 @@ Run this at the top of every `cofounder-continue`, and in read-only form for `co
      congratulated. Do not delete or re-derive that section (see step 6 for how it is written).
      Stall `CF-WEEK-NOT-INSTALLED`, point at `upgrade.md`, and frame it as "you're on an older
      version that's missing Week N — here's how to get it back", never as a fresh offer. Set
-     `current-week` to the highest *installed* week so `status` still renders something real.
+     `current-week` to the highest *installed* week so `progress` still renders something real.
    - **(b) An installed week has open work.** `current-week` = the lowest-numbered installed
      week not fully `verified`/`skipped`. This is the normal path; go on to step 4.
    - **(c) Every installed week is complete and state names no uninstalled week.** There is no
@@ -149,7 +149,7 @@ I'm stuck, and this isn't something you did wrong.
   What happened: <plain sentence>
   Code: W1-T4-CHROME-DEAD
 
-Say **status** to see where you are. If this keeps happening, send that code back to whoever set you up.
+Say **cw-status** to see where you are. If this keeps happening, send that code back to whoever set you up.
 ```
 
 Codes come in two namespaces, uppercase, no spaces:

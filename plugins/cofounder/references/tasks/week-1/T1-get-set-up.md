@@ -9,13 +9,13 @@ absorbs: [old task 1, plugin install]
 
 **The only task with no agent.** By the time this file is being read, the founder has already
 done it: the app is installed, the folder exists, the plugin is installed, and they have said
-*continue*. Everything below is therefore a **check**, not an instruction.
+*cw-continue*. Everything below is therefore a **check**, not an instruction.
 
 The founder-facing instructions for this task live outside the plugin, in the setup document
 and install video — it is the one step that happens before any agent exists. That document
 ends with:
 
-> Say **continue** — you never need this document again.
+> Say **cw-continue** — you never need this document again.
 
 ## Gating questions
 
