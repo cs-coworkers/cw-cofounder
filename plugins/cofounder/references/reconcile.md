@@ -166,12 +166,12 @@ Existing codes:
 | `CF-NO-MARKER` | `CW-COFOUNDER-LOADED` missing from instructions a session after the paste step — the settings pointer did not land. |
 | `CF-STATE-CONFLICT` | `progress.md` cannot be parsed; rebuilt from evidence. |
 | `CF-WEEK-NOT-INSTALLED` | `progress.md` has a week this installed copy does not carry. Their history is kept; see `upgrade.md`. |
+| `CF-INPUTS-EMPTY` | `02-inputs/` exists but has nothing in it. Fires from T4 and from `update`, in any week. |
+| `CF-UNREADABLE` | An inputs file could not be read (format or size). Fires from T4 and from `update`, in any week. |
 | `W1-T1-NO-FOLDER` | No working folder is connected to this project. |
 | `W1-T1-NO-WRITE` | Folder connected but not writable. |
 | `W1-T2-NO-CHROME` | Claude in Chrome not installed or not responding. |
 | `W1-T4-CHROME-DEAD` | Site read failed — extension connected but page unreachable. |
-| `W1-T4-INPUTS-EMPTY` | `02-inputs/` exists but has nothing in it. |
-| `W1-T4-UNREADABLE` | An Inputs file could not be read (format or size). |
 | `W1-T8-NO-CONNECTORS` | Connector list came back empty after the founder said they wired them. |
 
 Add a code rather than failing quietly. A new failure mode with no code is a bug in this file.

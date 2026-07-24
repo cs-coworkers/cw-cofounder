@@ -12,7 +12,15 @@ unit. No task content changed.
   settings field, so it must not carry a week number that would break at Week 2.
 - Stall codes split into two namespaces: `CF-<reason>` for anything that can happen in any
   week, `W<week>-T<task>-<reason>` for a specific task in a specific week. New:
-  `CF-WEEK-NOT-INSTALLED`.
+  `CF-WEEK-NOT-INSTALLED`. `W1-T4-INPUTS-EMPTY` and `W1-T4-UNREADABLE` became
+  `CF-INPUTS-EMPTY` / `CF-UNREADABLE` — both fire from `update` as well as from T4, so
+  neither belongs to Week 1.
+- The session-start line the founder writes into their own instructions file, settings paste,
+  and optional scheduled task now says "run the **continue** skill", with no week number. Same
+  reason as the marker: it lives in state we do not own, and it would name the wrong week from
+  Week 2 onward.
+- A dead Claude in Chrome no longer strands the founder at T2. The stall code carries the
+  unfinished business forward; the task itself verifies and position advances.
 - Week resolution added. `progress.md` gains `weeks-installed` and `current-week` and keeps
   one section per week; weeks already finished are carried forward exactly as they were and
   are never re-checked against a later release's task files.

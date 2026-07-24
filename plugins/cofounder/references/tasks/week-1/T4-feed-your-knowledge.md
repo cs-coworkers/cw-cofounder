@@ -45,8 +45,8 @@ branch below.
 > **Success moment:** tell me when the files are in and I'll tell you how many I can see.
 
 **Step 2 — confirm receipt.** Count and list what is in `02-inputs/`. Name anything
-unreadable rather than skipping it silently (`W1-T4-UNREADABLE`). Empty folder →
-`W1-T4-INPUTS-EMPTY`.
+unreadable rather than skipping it silently (`CF-UNREADABLE`). Empty folder →
+`CF-INPUTS-EMPTY`.
 
 **Step 3 — distil.** Write the four files in `01-company/`:
 

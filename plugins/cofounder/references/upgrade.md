@@ -80,3 +80,21 @@ Not founder-facing. A week release is:
 4. `CHANGELOG.md` entry naming the week and anything a mid-flight founder would notice.
 5. The marketplace description's week count updated — it is the only place a prospective
    founder sees how far the program currently runs.
+6. **The shippable set synced to `cs-coworkers/cw-cofounder`** — the public product repo, and
+   the only place a founder can install from. `cw-plugins` is the dev home (internal README,
+   `evals/`, history); `cw-cofounder` is release-only and carries the product alone. Nothing
+   reaches a founder until this step runs.
+
+**The sync, concretely.** Copy `plugins/cofounder/` from `cw-plugins` to `cw-cofounder`,
+**excluding** `README.md` (internal notes) and `evals/` (our test material); the public repo
+keeps its own root `README.md` and `.claude-plugin/marketplace.json`. Every other file must
+be byte-identical in both repos at release. Verify before tagging:
+
+```bash
+diff -r -x README.md -x evals cw-plugins/plugins/cofounder cw-cofounder/plugins/cofounder
+```
+
+Empty output is the pass condition. A fix that lands in one repo and not the other ships a
+plugin nobody reviewed — and because the public copy is the one founders install, the repo we
+read during review would not be the repo they run. Sync on every change to a shipped file, not
+only on week releases.

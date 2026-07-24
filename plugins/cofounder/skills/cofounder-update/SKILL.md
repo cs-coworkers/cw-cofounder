@@ -47,10 +47,10 @@ which holds one line per source already ingested. Classify each file:
 
 Nothing new or changed → say so plainly and stop. That is a successful run, not a failure.
 
-Empty inputs folder → stall `W1-T4-INPUTS-EMPTY`.
+Empty inputs folder → stall `CF-INPUTS-EMPTY`.
 
 **2. Read the new material.** Anything unreadable gets named, with the reason
-(`W1-T4-UNREADABLE`). Never skip a file in silence.
+(`CF-UNREADABLE`). Never skip a file in silence.
 
 **3. Work out what changes.** For each of the four `01-company/` files, and
 `03-artifacts/` if the new material touches a saved artifact, decide what the new material
