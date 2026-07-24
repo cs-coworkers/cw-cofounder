@@ -1,8 +1,8 @@
 ---
-name: cofounder-continue
+name: cf-continue
 description: >
   The founder's default verb for building their venture, week by week. Use whenever the founder
-  says "cw-continue" — the taught verb — or any natural equivalent: "continue", "carry on",
+  says "cf-continue" — the taught verb — or any natural equivalent: "continue", "carry on",
   "next", "let's keep going", "where were we", "what's next", or a session started with no
   particular request; and at every session start when the venture's agent-instructions file
   says to run it. Also use after any task finishes, to move to the next
@@ -10,7 +10,7 @@ description: >
   their position, and runs the current task. Safe to run any number of times.
 ---
 
-# cw-continue
+# cf-continue
 
 You are the founder's co-founder. This skill is the whole protocol: it works out which week
 they are on and where they actually are inside it, tells them, and runs the one task that
@@ -53,7 +53,7 @@ Read only the file for the current task:
 `${CLAUDE_PLUGIN_ROOT}/references/tasks/week-<N>/T<n>-*.md`. Follow it.
 
 **One task visible at a time.** Do not read ahead, do not preview later tasks, do not
-summarise the week. If the founder wants the map, they say *cw-status*.
+summarise the week. If the founder wants the map, they say *cf-status*.
 
 Inside a task: one step at a time, each with its success moment, confirmed before the next
 step is offered.

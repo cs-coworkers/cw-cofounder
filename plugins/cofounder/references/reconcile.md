@@ -7,7 +7,7 @@ repo: product-cofounder
 Fresh install and hundredth rerun are the same code path: **look at what is actually
 there, then act on the gap.** Nothing in this protocol trusts a claim of progress.
 
-Run this at the top of every `cofounder-continue`, and in read-only form for `cofounder-status`.
+Run this at the top of every `cf-continue`, and in read-only form for `cf-status`.
 
 ## The loop
 
@@ -118,7 +118,7 @@ Run this at the top of every `cofounder-continue`, and in read-only form for `co
 9. **Run the current task's flow** from its `tasks/week-<N>/` file. One task visible at a
    time — do not preview later tasks, do not list the whole week, and never mention weeks
    that are not installed. If the founder wants the map they will ask, and
-   `cofounder-status` gives it to them.
+   `cf-status` gives it to them.
 
 ## Do no harm
 
@@ -149,7 +149,7 @@ I'm stuck, and this isn't something you did wrong.
   What happened: <plain sentence>
   Code: W1-T4-CHROME-DEAD
 
-Say **cw-status** to see where you are. If this keeps happening, send that code back to whoever set you up.
+Say **cf-status** to see where you are. If this keeps happening, send that code back to whoever set you up.
 ```
 
 Codes come in two namespaces, uppercase, no spaces:

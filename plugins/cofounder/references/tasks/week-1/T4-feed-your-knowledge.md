@@ -70,7 +70,7 @@ did anything in `open-questions.md` surprise you?
 
 **Step 6 — the update line.** Say it, in these words:
 
-> Add files to `02-inputs/` whenever you like — then say **cw-update** and I'll take them in.
+> Add files to `02-inputs/` whenever you like — then say **cf-update** and I'll take them in.
 > New files never wipe out what's already here; I'll show you what changed before I touch
 > anything.
 

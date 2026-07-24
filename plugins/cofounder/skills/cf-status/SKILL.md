@@ -1,19 +1,19 @@
 ---
-name: cofounder-status
+name: cf-status
 description: >
-  Show the founder where they are, read-only. Use whenever the founder says "cw-status" — the
+  Show the founder where they are, read-only. Use whenever the founder says "cf-status" — the
   taught verb — or any natural equivalent: "where am I", "how much is left", "show me the
   list", "what have I done", "is this thing working", "what's still open", "progress",
   "status", or asks to see all the tasks at once. Renders the current
   week's tasks with what is verified, what is next, and how to get help. Changes nothing.
 ---
 
-# cw-status
+# cf-status
 
 The founder's "is this thing working?" button. **Read-only.** This skill never writes a file,
 never advances a task, never asks a question.
 
-**The taught verb is `cw-status`.** "status" and "progress" remain silent aliases in the
+**The taught verb is `cf-status`.** "status" and "progress" remain silent aliases in the
 trigger list above, but never print them — this is the verb the host actually took from us
 (Charlie's run, 2026-07-24: Cowork matched "status" first and offered Claude Code, where the
 plugin is not installed, so nothing happened). Rule and rationale: `voice.md` § The founder's
@@ -27,15 +27,15 @@ week, check every task in it against what is on disk, but do not rewrite
 `00-admin/progress.md`.
 
 Include the `CW-COFOUNDER-LOADED` marker check. If the marker is missing and T2's paste step has
-already run, say so here as a fixable line rather than a stall — `cw-status` never blocks:
+already run, say so here as a fixable line rather than a stall — `cf-status` never blocks:
 
 > One thing to fix: the setup line isn't in your project's instructions setting, so I'm not
-> starting sessions on my own. Say **cw-continue** and I'll give you the lines again.
+> starting sessions on my own. Say **cf-continue** and I'll give you the lines again.
 
 If what you find disagrees with the stored progress file, show the truth from disk and say
 one line about it:
 
-> (Heads up — your notes say task 5 is done but I can't find the file. Say **cw-continue** and
+> (Heads up — your notes say task 5 is done but I can't find the file. Say **cf-continue** and
 > I'll sort it out.)
 
 ## What to show
@@ -59,8 +59,8 @@ Week 1 — you're on task 4 of 9. Verified through task 3.
 
 Next: finishing task 4 — I've got 6 of your files, and I'm distilling them now.
 
-Say **cw-continue** to carry on.
-Add files to 02-inputs/ any time, then say **cw-update**.
+Say **cf-continue** to carry on.
+Add files to 02-inputs/ any time, then say **cf-update**.
 Stuck? Send whoever set you up whatever I last told you, including any code like W1-T4-CHROME-DEAD.
 ```
 
@@ -79,12 +79,12 @@ Show the map with everything done, then one line pointing at the next week — t
 as `${CLAUDE_PLUGIN_ROOT}/references/upgrade.md`, said shorter because they only asked for
 status:
 
-> Week 1 — all nine done. Week 2 comes as an update to me; say **cw-continue** and I'll walk
+> Week 1 — all nine done. Week 2 comes as an update to me; say **cf-continue** and I'll walk
 > you through picking it up.
 
 ## If nothing exists yet
 
-They have installed the plugin and said cw-status before anything else. That is fine:
+They have installed the plugin and said cf-status before anything else. That is fine:
 
 > You're at the very start — nothing set up yet, which is exactly right.
-> Say **cw-continue** and I'll take you through it, one step at a time.
+> Say **cf-continue** and I'll take you through it, one step at a time.

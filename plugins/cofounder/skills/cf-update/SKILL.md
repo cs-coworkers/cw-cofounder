@@ -1,7 +1,7 @@
 ---
-name: cofounder-update
+name: cf-update
 description: >
-  Re-ingest the founder's material. Use whenever the founder says "cw-update" — the taught
+  Re-ingest the founder's material. Use whenever the founder says "cf-update" — the taught
   verb — or "update", or tells you they have added, changed, or removed files in their inputs
   folder — "I've added more files", "what if I add more documents", "I put some new notes in
   there", "re-read my stuff", "I've updated the deck". Sweeps the inputs folder for anything new or changed and merges it into the
@@ -9,7 +9,7 @@ description: >
   times, in any week.
 ---
 
-# cw-update
+# cf-update
 
 The founder has more material. Take it in without destroying what is already distilled.
 
@@ -18,7 +18,7 @@ her inputs folder and had no way to tell her agent to read them. If she is askin
 at all, the answer is always yes — never tell her to wait for a later task.
 
 **One word, two meanings — disambiguate before acting.** This is why the taught verb is
-`cw-update`: only one of the two meanings carries the prefix, so a founder who says it is never
+`cf-update`: only one of the two meanings carries the prefix, so a founder who says it is never
 ambiguous. But the **bare** "update" is still a live alias, and it also names the Cowork button
 for getting the next week (`${CLAUDE_PLUGIN_ROOT}/references/upgrade.md`) — a founder saying it
 has no reason to know the difference. On the bare word only: if they say it right after being
@@ -104,7 +104,7 @@ show-the-diff-first rule.
 
 Say this, once:
 
-> Done. Add more whenever you like — say **cw-update** again and I'll take those in too.
+> Done. Add more whenever you like — say **cf-update** again and I'll take those in too.
 
 Then offer to carry on with the current task. Do not restart the week and do not re-verify
 tasks that were already verified; running `update` never moves position.

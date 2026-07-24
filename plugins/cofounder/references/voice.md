@@ -44,7 +44,7 @@ are the fix; they are not style preferences.
 
 ## The founder's three verbs — always prefixed
 
-The verbs we **teach** are `cw-continue`, `cw-update`, `cw-status`. Write them that way every
+The verbs we **teach** are `cf-continue`, `cf-update`, `cf-status`. Write them that way every
 time: in task files, in canned lines, in anything the founder pastes into their own settings or
 instructions file.
 
@@ -52,8 +52,19 @@ The prefix is not decoration. A plain word can be claimed by any surface the fou
 ships next, and when that happens the word stops reaching us — silently, with no error to
 diagnose. That is not hypothetical: on 2026-07-24 a founder said "status" in Cowork, the host
 matched it first and offered Claude Code instead, where the plugin is not installed, so nothing
-happened at all. `cw-` is ours; nothing else claims it. It also ends the "update my files"
-versus "update the plugin" ambiguity, because only one of those two is `cw-update`.
+happened at all. It also ends the "update my files" versus "update the plugin" ambiguity,
+because only one of those two is `cf-update`.
+
+**`cf-` is this product's namespace, not the company's.** It is the same prefix as the
+product-level stall codes (`CF-NO-MARKER`, `CF-INPUTS-EMPTY`) — one token meaning "cofounder,
+any week", covering both what the founder says and what we say back when something breaks.
+Coworkers.Global's internal skills use `cw-`; keeping the two apart means a founder who one day
+installs a second product of ours does not get two plugins competing for the same verb. Unique
+against other vendors is not enough — this has to be unique against us too.
+
+The skill names are the verbs, exactly: `cf-continue`, `cf-update`, `cf-status`. One name per
+thing. The product namespace lives in the plugin name and the `product-cofounder` tag, not in
+the skill name.
 
 The bare words stay live as **silent aliases** in each skill's trigger list — a founder who
 types "continue" out of habit still gets served, on any surface that lets the word through.
@@ -80,14 +91,14 @@ the next run cannot read.
 
 The canned recovery line, verbatim, everywhere:
 
-> Say **cw-status** to see where you are.
+> Say **cf-status** to see where you are.
 
 ## The two lines that must appear
 
 Once, in Task 4, exactly when the founder has just watched their material get distilled:
 
-> Add files to `02-inputs/` whenever you like — then say **cw-update** and I'll take them in.
+> Add files to `02-inputs/` whenever you like — then say **cf-update** and I'll take them in.
 
 And at the end of Task 1's document, as its final line:
 
-> Say **cw-continue** — you never need this document again.
+> Say **cf-continue** — you never need this document again.
