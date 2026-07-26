@@ -126,3 +126,38 @@ grep -nE 'cf-(continue|update|status)|v0\.[0-9]+\.[0-9]+' cw-cofounder/README.md
 
 Missed on 2026-07-24: the verb rename landed everywhere the diff could reach, and left the
 public README teaching the old bare words to every founder who opened the repo page.
+
+## Gate status — one source, two copies
+
+**Gate state is derived, never authored.** The single source is the gate run records in
+`…/campaigns/active/building-with-managed-agents/assets/`, one per gate, and specifically their
+frontmatter: `gate:` names which gate, `status:` is its verdict. A gate with no record has not
+run. Nothing else may assert a gate's state on its own authority — if a string somewhere says a
+gate passed, it is quoting a record or it is wrong.
+
+There are exactly two copies, and **both sit outside the parity diff**: the dev
+`cw-plugins/.claude-plugin/marketplace.json` entry (not under `plugins/cofounder/` at all) and
+the public `cw-cofounder/.claude-plugin/marketplace.json` entry (excluded by design). So neither
+is ever reported stale by anything above. Regenerate both from the records at every release, and
+at any point a gate's verdict changes — a gate verdict lands on a different day from a version
+bump, which is exactly how it goes unnoticed.
+
+The two audiences differ and should stay different: the dev entry names gates by number, because
+we read it; the public entry says only that the product is early access with gates outstanding,
+because a founder does not have our gate vocabulary and numbering it invites them to ask which
+gate they are. Both must still be *true*.
+
+```bash
+grep -noE 'UNRELEASED|[Ee]arly access|[Gg]ates? [0-9]+|gates? pending|PASSED [0-9-]+' \
+  cw-plugins/.claude-plugin/marketplace.json cw-cofounder/.claude-plugin/marketplace.json
+```
+
+The pass condition is that every gate claim printed matches a run record's `status:`, and no
+string claims or implies a gate that has no record. Unlike the parity diff, empty output is a
+**failure** here — it means the status vocabulary was reworded and this grep has gone blind.
+
+Added 2026-07-26, after the third silent status drift in three days: the rename-unsafe sync, the
+excluded public README, and the dev marketplace entry still reading "Gate 2 pending" two days
+after Gate 2 passed. All three are one shape — **a string nothing checks, describing state that
+lives somewhere else.** The general guard is the one that retires the class: name the source,
+keep the copies countable, and grep them.
