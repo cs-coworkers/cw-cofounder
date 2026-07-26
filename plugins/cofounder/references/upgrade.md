@@ -105,10 +105,31 @@ Verify before tagging — the `diff -r` catches an orphan as an `Only in …` li
 the pass condition is empty output and not "no differences reported":
 
 ```bash
-diff -r -x README.md -x evals cw-plugins/plugins/cofounder cw-cofounder/plugins/cofounder
+diff -r --strip-trailing-cr -x README.md -x evals \
+  cw-plugins/plugins/cofounder cw-cofounder/plugins/cofounder
 ```
 
-Empty output is the pass condition. A fix that lands in one repo and not the other ships a
+Empty output is the pass condition.
+
+**`--strip-trailing-cr` is load-bearing on Windows, not tidiness.** With `core.autocrlf` on,
+any checkout re-materializes that repo's working tree with CRLF while the other stays LF, and
+the diff then reports *every file* as differing — a total false failure, arriving precisely when
+someone is about to ship. The trap is the obvious repair: re-copy and commit, which pushes CRLF
+into the public repo for real. Seen 2026-07-26, immediately after a `git checkout main`.
+
+When the answer matters — before tagging, or when a diff looks implausible — settle it against
+git rather than the working tree, which cannot lie about line endings:
+
+```bash
+git -C cw-plugins   ls-tree -r HEAD --format='%(objectname) %(path)' plugins/cofounder \
+  | grep -vE 'README.md|/evals/' | sed 's|plugins/cofounder/||' | sort > /tmp/dev.txt
+git -C cw-cofounder ls-tree -r HEAD --format='%(objectname) %(path)' plugins/cofounder \
+  | grep -vE 'README.md|/evals/' | sed 's|plugins/cofounder/||' | sort > /tmp/pub.txt
+diff /tmp/dev.txt /tmp/pub.txt
+```
+
+Identical blob hashes for identical paths is proof of byte-identical *committed* content, which
+is what actually ships. Empty output passes; 18 shipped files at `v0.3.0`. A fix that lands in one repo and not the other ships a
 plugin nobody reviewed — and because the public copy is the one founders install, the repo we
 read during review would not be the repo they run. Sync on every change to a shipped file, not
 only on week releases.
