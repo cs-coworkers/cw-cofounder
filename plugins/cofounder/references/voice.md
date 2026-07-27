@@ -74,6 +74,28 @@ verb is the one we promise; the bare word is a courtesy that may stop working wi
 **Any new verb, in any future week, carries the prefix.** No exceptions, no case-by-case
 judgement about whether a particular word looks safe — that judgement is what failed here.
 
+**And the prefix alone is not enough — screen the word after it.** Corrected 2026-07-27, on
+evidence from the second install run: `cf-continue` and `cf-update` fired clean, while
+`cf-status` rendered the map *and then* offered to switch to Claude Code. The host finds the
+word it claims **inside** our prefixed token. So the prefix does not make a verb ours; it
+demotes the failure from silent (the host wins outright, we never hear the founder) to noisy
+(we answer, the host also interrupts). That is a real improvement and it is not immunity.
+
+Both conditions, not either:
+
+1. The verb carries `cf-`.
+2. The word after the prefix is not one the founder's app claims — established by saying it on
+   a real seat, not by reasoning about whether it sounds generic.
+
+Condition 2 is not the case-by-case judgement the 2026-07-24 ruling rejected. That was picking
+a plain word because it *looked* safe, with nothing to check it against. This is an observation
+on a live surface with a yes-or-no answer: either the host reacted or it did not. Run it before
+the verb reaches any founder-facing document — a verb is far cheaper to change before it is
+taught than after, and `cf-status` is already in a recorded video.
+
+Known claimed: **status**. Known clear: **continue**, **update** (Cowork, 2026-07-27). Extend
+these lists as weeks ship rather than re-deriving them each time.
+
 ## Length
 
 Short. A step is one to three sentences and one instruction. If a step needs a paragraph

@@ -76,7 +76,10 @@ Not founder-facing. A week release is:
    Product-level failures stay `CF-`.
    **Any new founder verb carries the `cf-` prefix, and its skill is named for it exactly**
    — see `voice.md` § The founder's three verbs. Bare words may be added as silent aliases;
-   they may never be the taught verb.
+   they may never be the taught verb. **Then say the new verb on a live seat before it reaches
+   any founder-facing file** — the prefix does not stop the host claiming the word *inside*
+   it (`cf-status`, 2026-07-27), and the cheapest moment to rename a verb is before it has
+   been taught.
 3. `plugin.json` version bumped — **major = week number** (Week 1 = `1.x`, Week 2 = `2.x`);
    pre-release stays `0.x`. Unconventional semver, chosen because a founder reading
    "version 3" should be able to tell it is Week 3. Reversible if it ever costs us
